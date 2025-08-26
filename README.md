@@ -24,11 +24,3 @@ curl -x SCHEME://HOST:PORT -I https://usher.ttvnw.net/api/channel/hls/CHANNEL.m3
 ```
 
 Replace `SCHEME`, `HOST`, `PORT`, and `CHANNEL` with your proxy details and a Twitch channel name. If the command returns a `HTTP/2 200` status code, it means that your proxy is working correctly.
-
-## How to install
-
-1.  Open Chrome and go to `chrome://extensions/`
-2.  Enable "Developer mode" in the top right corner
-3.  Click "Load unpacked"
-4.  Select the `TTV1080` folder
-5.  The extension will be installed
