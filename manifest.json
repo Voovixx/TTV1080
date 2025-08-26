@@ -17,7 +17,8 @@
     "webRequest"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "*://*.twitch.tv/*",
+    "*://*.ttvnw.net/*"
   ],
   "background": {
     "service_worker": "background.js"
