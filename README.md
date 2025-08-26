@@ -1,4 +1,4 @@
-# TTV1080 - 1080p (Configurable)
+# TTV1080
 
 This is a modified version of the TTV1080 extension, which allows you to use your own proxy server to unlock 1080p quality on Twitch.
 
