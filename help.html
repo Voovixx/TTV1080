@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TTV1080 Help</title>
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #1c1e21;
+    }
+
+    body.dark-theme {
+      --bg-color: #1c1e21;
+      --text-color: #e4e6eb;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 2em;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-color);
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    code {
+        background-color: #f1f3f4;
+        padding: 0.2em 0.4em;
+        border-radius: 4px;
+    }
+    body.dark-theme code {
+        background-color: #3a3b3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 data-i18n="helpTitle"></h1>
+    <p data-i18n="helpP1"></p>
+    <h2 data-i18n="howItWorksTitle"></h2>
+    <p data-i18n="howItWorksP1"></p>
+    <p data-i18n="howItWorksP2"></p>
+    <h2 data-i18n="howToUseTitle"></h2>
+    <ol>
+      <li data-i18n="howToUseL1"></li>
+      <li data-i18n="howToUseL2"></li>
+      <li data-i18n="howToUseL3"></li>
+      <li data-i18n="howToUseL4"></li>
+    </ol>
+  </div>
+  <script src="help.js"></script>
+</body>
+</html>

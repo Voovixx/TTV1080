@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="optionsTitle"></title>
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #1c1e21;
+      --input-bg-color: #fff;
+      --input-border-color: #ddd;
+      --button-bg-color: #1877f2;
+      --button-text-color: #fff;
+      --button-hover-bg-color: #166fe5;
+      --curl-bg-color: #282c34;
+      --curl-text-color: #abb2bf;
+    }
+
+    body.dark-theme {
+      --bg-color: #1c1e21;
+      --text-color: #e4e6eb;
+      --input-bg-color: #3a3b3c;
+      --input-border-color: #3a3b3c;
+      --button-bg-color: #1877f2;
+      --button-text-color: #fff;
+      --button-hover-bg-color: #166fe5;
+      --curl-bg-color: #282c34;
+      --curl-text-color: #abb2bf;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 2em;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      width: 400px;
+      background: var(--bg-color);
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 1.5em;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8em;
+      border: 1px solid var(--input-border-color);
+      background-color: var(--input-bg-color);
+      color: var(--text-color);
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: none; /* Added this line */
+    }
+    button {
+      width: 100%;
+      padding: 0.8em;
+      border: none;
+      border-radius: 4px;
+      background-color: var(--button-bg-color);
+      color: var(--button-text-color);
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: var(--button-hover-bg-color);
+    }
+    #status {
+      margin-top: 1em;
+      text-align: center;
+      font-weight: 600;
+    }
+    .help-section {
+        margin-top: 2em;
+        font-size: 0.9em;
+        color: #606770;
+    }
+    .help-section a {
+        color: #1877f2;
+        text-decoration: none;
+    }
+    .help-section a:hover {
+        text-decoration: underline;
+    }
+    .language-switcher {
+        text-align: right;
+        margin-bottom: 1em;
+    }
+    .save-settings-group {
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .save-settings-group input {
+        width: auto;
+        margin-right: 0.5em;
+    }
+    .save-settings-group label {
+        margin-bottom: 0;
+    }
+    .language-switcher {
+        text-align: right;
+        margin-bottom: 1em;
+    }
+    .save-settings-group {
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .save-settings-group input {
+        width: auto;
+        margin-right: 0.5em;
+    }
+    .save-settings-group label {
+        margin-bottom: 0;
+    }
+    .curl-command-container {
+        margin-top: 1.5em;
+    }
+    #curl-command {
+        background-color: var(--curl-bg-color);
+        color: var(--curl-text-color);
+        padding: 1em;
+        border-radius: 4px;
+        font-family: 'Fira Code', 'Courier New', monospace;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="language-switcher">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+        </select>
+    </div>
+    <h1 data-i18n="optionsTitle"></h1>
+    <div class="form-group">
+      <label for="proxy-scheme" data-i18n="proxyProtocolLabel"></label>
+      <select id="proxy-scheme">
+        <option value="socks5">SOCKS5</option>
+        <option value="socks4">SOCKS4</option>
+        <option value="http">HTTP</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="proxy-host" data-i18n="proxyHostLabel"></label>
+      <input type="text" id="proxy-host" placeholder="e.g., 127.0.0.1">
+    </div>
+    <div class="form-group">
+      <label for="proxy-port" data-i18n="proxyPortLabel"></label>
+      <input type="number" id="proxy-port" placeholder="e.g., 9050">
+    </div>
+    <button id="save" data-i18n="saveButton"></button>
+    <div class="curl-command-container">
+        <button id="generate-curl" data-i18n="generateCurlButton"></button>
+        <textarea id="curl-command" rows="3"></textarea>
+        <button id="copy-curl" data-i18n="copyCurlButton"></button>
+        <div data-i18n="curlInstructions"></div>
+    </div>
+    <div id="status"></div>
+
+    <div class="help-section">
+        <p><a href="help.html" target="_blank" data-i18n="helpLink"></a></p>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
